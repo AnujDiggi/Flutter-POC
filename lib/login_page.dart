@@ -1,5 +1,5 @@
 import 'package:first_project/column_rows.dart';
-import 'package:first_project/main.dart';
+import 'package:first_project/signup_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -49,11 +49,11 @@ class LoginPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Home()));
+              context, MaterialPageRoute(builder: (context) => const SignupPage()));
         },
         backgroundColor: Colors.green,
         child: const Text(
-          'click here',
+          'Sign Up',
           textAlign: TextAlign.center,
         ),
       ),

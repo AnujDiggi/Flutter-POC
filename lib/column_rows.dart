@@ -1,5 +1,5 @@
+import 'package:first_project/home.dart';
 import 'package:first_project/login_page.dart';
-import 'package:first_project/main.dart';
 import 'package:flutter/material.dart';
 
 class ColumnRows extends StatelessWidget {

@@ -21,6 +21,7 @@ flutter:
   assets:
     - assets/pic-1.jpg
     - assets/pic-2.jpg
+    - assets/welcome.jpg
 
   # fonts:
   #   family: IndieFlower

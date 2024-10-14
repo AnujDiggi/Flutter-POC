@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const Home(), // Starting point
+      home: const Welcome(), // Starting point
     );
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Welcome extends StatelessWidget {
+  const Welcome({super.key});
 
   @override
   Widget build(BuildContext context) {
