@@ -1,5 +1,7 @@
 // ignore_for_file: file_names
 
+// ----------------------- Custom AppBar --------------------------
+
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
