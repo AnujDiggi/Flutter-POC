@@ -1,3 +1,4 @@
+import 'package:first_project/Custom_Components/customAppBar.dart';
 import 'package:first_project/home.dart';
 import 'package:first_project/login_page.dart';
 import 'package:flutter/material.dart';
@@ -8,18 +9,7 @@ class ColumnRows extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "First App",
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            letterSpacing: 1.5,
-          ),
-        ),
-        backgroundColor: Colors.green,
-      ),
+      appBar: const CustomAppBar(title: 'Column Page'),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

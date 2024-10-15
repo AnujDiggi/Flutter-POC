@@ -1,3 +1,5 @@
+import 'package:first_project/Custom_Components/customAppBar.dart';
+import 'package:first_project/Custom_Components/customeDrawer.dart';
 import 'package:first_project/Navigation_bar/navigation_menu.dart';
 import 'package:first_project/music.dart';
 import 'package:first_project/shopping.dart';
@@ -9,15 +11,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "First App",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500),
-        ),
-        backgroundColor: Colors.green,
-      ),
+      appBar: const CustomAppBar(title: 'Home'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -123,28 +117,14 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Navigation Menu Button
-            //const SizedBox(height: 20), // Space before the button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const NavigationMenu(),
-                    ),
-                  );
-                },
-                child: const Text('Go to Navigation Menu'), // Correct text
-              ),
-            ),
-            
           ],
         ),
       ),
       backgroundColor: const Color.fromRGBO(213, 245, 227, 0.8),
+      bottomNavigationBar: const NavigationMenu(
+        currentIndex: 0,
+      ),
+      drawer: const CustomDrawer(),
     );
   }
 }
