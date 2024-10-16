@@ -1,6 +1,8 @@
 import 'package:first_project/Custom_Components/customAppBar.dart';
+import 'package:first_project/Provider_Packages/count_provider.dart';
 import 'package:first_project/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+
+
+          create: (_) => CountProvider(),
+          
+          child: MaterialApp(
       // Ensure that this MaterialApp is wrapping the whole app
       debugShowCheckedModeBanner: false,
       title: 'First App',
@@ -19,7 +26,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: const Welcome(), // Starting point
+    )
     );
+    // return MaterialApp(
+    //   // Ensure that this MaterialApp is wrapping the whole app
+    //   debugShowCheckedModeBanner: false,
+    //   title: 'First App',
+    //   theme: ThemeData(
+    //     primarySwatch: Colors.green,
+    //   ),
+    //   home: const Welcome(), // Starting point
+    // );
   }
 }
 
