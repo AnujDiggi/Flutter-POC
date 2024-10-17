@@ -1,5 +1,6 @@
 import 'package:first_project/Custom_Components/customAppBar.dart';
 import 'package:first_project/Provider_Packages/count_provider.dart';
+import 'package:first_project/Provider_Packages/example_multipleprovider.dart';
 import 'package:first_project/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,21 +14,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-
-
-          create: (_) => CountProvider(),
-          
-          child: MaterialApp(
-      // Ensure that this MaterialApp is wrapping the whole app
-      debugShowCheckedModeBanner: false,
-      title: 'First App',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const Welcome(), // Starting point
-    )
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => CountProvider()),
+          ChangeNotifierProvider(create: (_) => ExampleMultipleprovider())
+        ],
+        child: MaterialApp(
+          // Ensure that this MaterialApp is wrapping the whole app
+          debugShowCheckedModeBanner: false,
+          title: 'First App',
+          theme: ThemeData(
+            primarySwatch: Colors.green,
+          ),
+          home: const Welcome(), // Starting point
+        ));
     // return MaterialApp(
     //   // Ensure that this MaterialApp is wrapping the whole app
     //   debugShowCheckedModeBanner: false,
@@ -79,13 +79,13 @@ class Welcome extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Welcome",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20
+                    const Text(
+                      "Welcome",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
+                    const SizedBox(
+                      height: 20,
                     ),
-                    const SizedBox(height: 20,),
                     IconButton(
                         onPressed: () {
                           Navigator.push(

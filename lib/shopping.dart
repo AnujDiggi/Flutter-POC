@@ -2,6 +2,7 @@ import 'package:first_project/Custom_Components/customAppBar.dart';
 import 'package:first_project/Custom_Components/customeDrawer.dart';
 import 'package:first_project/Navigation_bar/navigation_menu.dart';
 import 'package:first_project/Screens_Component/count_example.dart';
+import 'package:first_project/Screens_Component/example_multiple.dart';
 import 'package:first_project/listBuilder_page.dart';
 import 'package:flutter/material.dart';
 
@@ -57,6 +58,14 @@ class ShoppingState extends State<Shopping> {
                           builder: (context) => const CountExample()));
                 },
                 child: const Text("Change Notifier")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ExampleMultiple()));
+                },
+                child: const Text("Multiple Notifier")),
           ],
         ),
       ),
